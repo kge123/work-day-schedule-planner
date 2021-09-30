@@ -1,3 +1,4 @@
+// displays currentDay in header
 var hour = moment().hours();
 $("#currentDay").text(moment().format("LLLL"));
 console.log(hour);
@@ -9,9 +10,9 @@ function saveText() {
   //save info into localstorage
   localStorage.setItem(hourKey, planText);
 }
-
+// saveBtn clicks and saves text 
 $(".saveBtn").on("click", saveText);
-
+// used to decipher past, present and future time period based on current time 
 function formatHour() {
   $(".time-block").each(function () {
     var rowHour = parseInt($(this).attr("id"));
@@ -30,7 +31,7 @@ function formatHour() {
 }
 
 formatHour();
-
+// gets saved info from local storage for each hour slot
 $("#9 .description").val(localStorage.getItem("9"));
 $("#10 .description").val(localStorage.getItem("10"));
 $("#11 .description").val(localStorage.getItem("11"));
